@@ -21,7 +21,9 @@
             dále vytvořit modely a form pro přidávání obrázku na stránku (pouze pro adminy stránky)
             vytvořit lepší routing a postupně komponenty
             nahrávání obrázku vytvořit i pro "cats", vytvořit jednu stránku pro přidávání contentu
-            asi bude složitější ale kdyžtak obšlehnu Wayovu cestu s poustama --}}
+            asi bude složitější ale kdyžtak obšlehnu Wayovu cestu s poustama
+
+            pak musím využít dropdrown item od waye a kouknout jak formátuje stránku, přes bootstrap s col to nemím--}}
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Me</a></li>
