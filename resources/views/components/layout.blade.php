@@ -17,6 +17,11 @@
 
     <main class="row">
         <nav class="col-xs-2">
+            {{-- vytvořit responsivní navbar, co se schová do loga místo aby mizelo na malé obrazovce
+            dále vytvořit modely a form pro přidávání obrázku na stránku (pouze pro adminy stránky)
+            vytvořit lepší routing a postupně komponenty
+            nahrávání obrázku vytvořit i pro "cats", vytvořit jednu stránku pro přidávání contentu
+            asi bude složitější ale kdyžtak obšlehnu Wayovu cestu s poustama --}}
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Me</a></li>
