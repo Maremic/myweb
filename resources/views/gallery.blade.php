@@ -1,3 +1,3 @@
 <x-layout>
-    cats
+    {{$images}}
 </x-layout>

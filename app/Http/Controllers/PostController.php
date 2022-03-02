@@ -12,10 +12,34 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function home()
     {
-        return view('welcome');
+        return view('postpage', [
+            'posts' => Post::paginate(18)
+        ]);
     }
+
+    public function show(Post $post)
+    {
+        return view('show', [
+            'post' => $post
+        ]);
+    }
+
+
+
+    public function about(){
+
+    }
+
+    public function contacts(){
+
+    }
+
+    // public function add(){
+
+    //     return view('postpage')->withPost($addform);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +48,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        //create database and form, to create posts
     }
 
     /**
@@ -35,7 +59,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //store images, maybe some data
     }
 
     /**
@@ -44,7 +68,7 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function shows(Post $post)
     {
         //
     }

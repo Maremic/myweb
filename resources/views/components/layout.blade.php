@@ -7,43 +7,82 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>MMs Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Include a Sidr bundled CSS theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.sidr/2.2.1/stylesheets/jquery.sidr.dark.min.css">
+    {{-- alpine for flash --}}
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+    <title>M̵̞̦̓͋̒͜M̴̠̪̘̐̒̿W̵͚̼̒̀͠ {{ Route::currentRouteName() }}</title>
 </head>
-<div class="container-lg border main">
+<div class="container-lg main vh-100 vw-100">
 
     <header class="row">
-        <div class="col-md-2 d-none d-md-block">MMw</div><div class="col-md">Mareš Michal Website</div>
+        <div id="menu" class="col-md-2 col-sm-12">
+            <a id="simple-menu" href="#sidr">
+                <button type="button" class="btn btn-warning">Menu</button>
+            </a>
+
+        </div>
+        <div class="col-md-8 d-none d-md-block"></div>
+        <div class="col-md-2"><h1 class="mt-4">M̵̞̦̓͋̒͜M̴̠̪̘̐̒̿W̵͚̼̒̀͠ {{ Route::currentRouteName() }}</h1></div>
     </header>
-
     <main class="row">
-        <nav class="col-xs-2">
-            {{-- vytvořit responsivní navbar, co se schová do loga místo aby mizelo na malé obrazovce
-            dále vytvořit modely a form pro přidávání obrázku na stránku (pouze pro adminy stránky)
-            vytvořit lepší routing a postupně komponenty
-            nahrávání obrázku vytvořit i pro "cats", vytvořit jednu stránku pro přidávání contentu
-            asi bude složitější ale kdyžtak obšlehnu Wayovu cestu s poustama
-
-            pak musím využít dropdrown item od waye a kouknout jak formátuje stránku, přes bootstrap s col to nemím--}}
-            <ul>
+        <div id="sidr">
+            <ul class="d-flex-column">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Me</a></li>
                 <li><a href="/works-gallery">Works Gallery</a></li>
                 <li><a href="/cats">Cats</a></li>
                 <li><a href="/contacts">Contacts</a></li>
+                @auth
+                            <li><a
+                                href="/logout"
+                                @click.prevent="document.querySelector('#logout-form').submit()">
+                                Welcome, {{ auth()->user()->name }}!
+                            </a>
+                            </li>
+                @else
+                    <li><a href="/register"
+                       class="text-xs font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
+                        Register
+                    </a></li>
+
+                    <li><a href="/login"
+                       class="ml-6 text-xs font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
+                        Log In
+                    </a></li>
+                @endauth
             </ul>
-        </nav>
-        <div class="col">{{ $slot }}</div>
-        <div class="col-xs-2">news, other stuff, nothing</div>
+
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="row">
+                <div class="col-md-10">
+                    {{$slot}}
+                </div>
+                <div class="col-md-2"><img src=""></div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="row">
         <div class="col-12">Mareš Michal 2022</div>
     </footer>
+    <x-flash/>
 
-    <body>
-        <div>
+        <!-- Include jQuery -->
+            <script src="//cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+        <!-- Include the Sidr JS -->
+            <script src="//cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
+        {{-- alpine for flash --}}
+            <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
-        </div>
-    </body>
+            <script>
+            $(document).ready(function() {
+                $('#simple-menu').sidr();
+            });
+            </script>
 </div>
 </html>
