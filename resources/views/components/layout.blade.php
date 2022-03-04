@@ -31,10 +31,10 @@
         <div id="sidr">
             <ul class="d-flex-column">
                 <li><a href="/">Home</a></li>
-                <li><a href="/about">About Me</a></li>
-                <li><a href="/works-gallery">Works Gallery</a></li>
-                <li><a href="/cats">Cats</a></li>
-                <li><a href="/contacts">Contacts</a></li>
+                <li><a href="/abouts">About Me</a></li>
+                <li><a href="/works">Works Gallery</a></li>
+                <li><a href="/hobbies">Hobbies</a></li>
+                <li><a href="/imagesg">Images</a></li>
                 @auth
                             <li><a
                                 href="/logout"
@@ -58,17 +58,19 @@
         </div>
         <div class="col-md-12 col-sm-12">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-sm-10">
                     {{$slot}}
                 </div>
-                <div class="col-md-2"><img src=""></div>
+                <div class="col-sm-2">
+                    <div><p>Contact</p><div>
+                </div>
             </div>
         </div>
 
     </main>
 
     <footer class="row">
-        <div class="col-12">Mareš Michal 2022</div>
+        <div class="col-12"><p>Mareš Michal 2022</p></div>
     </footer>
     <x-flash/>
 

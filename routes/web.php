@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\HobbyController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\WorksController;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
@@ -19,26 +24,19 @@ use Illuminate\Support\Facades\Route;
 
 //routes for normal post pages (have to find how to post there larger material)
 
-Route::get('/', [PostController::class, 'home'])->name('Home');
+Route::get('/', function(){
+        return view('welcome');
+});
 
-Route::get('posts/{post:slug}', [PostController::class, 'show']);
+Route::resource('/products', ProductController::class);
 
-//about, contacts, atd, add as categories => categories to li items to menu,
-//at post creating choose on which category, so at page,
+Route::resource('/abouts', AboutController::class);
 
-// Route::get('/about', [PostController::class, 'about'])->name('About');;
+Route::resource('/hobbies', HobbyController::class);
 
-// Route::get('/contacts', [PostController::class, 'contacts'])->name('Contacts');;
+Route::resource('/imagesg', ImageController::class);
 
-// table with categories, hardcoded about, cats, home, works gallery .. route {post:category}/{post:slug}, when creating post => add its category ??
-
-//routes for future image posts.
-
-
-
-Route::get('/works-gallery', [ImagesController::class, 'works'])->name('Works Gallery');;
-
-Route::get('/cats', [ImagesController::class, 'cats'])->name('Cats');
+Route::resource('/works', WorksController::class);
 
 //Ways connecting to session and register
 
@@ -50,7 +48,19 @@ Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 
 Route::get('logout', [SessionController::class, 'destroy'])->middleware('auth');
 
-// Admin Section
-Route::middleware('can:admin')->group(function () {
-    Route::resource('admin/posts', AdminPostController::class)->except('show');
-});
+
+
+
+    // then apply some CSS to make it prettier
+
+    // About model, Post model, --> then make it all clickable with "show", editable with "edit" and deletable with "delete" @method()
+
+    // but first try to make do the first steps in alls, create, index, store.
+
+    // make Bootstrap
+
+    // make edits, delete, show + validation and admin section! (hide create buttons for guests)
+
+    //add comments
+
+    //edit forms to leave old data, as Jeffrey did, validate data.

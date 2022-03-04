@@ -11288,7 +11288,7 @@ textarea.form-control-lg {
 }
 [class*=col] {
   padding: 1rem;
-  background-color: black;
+  background-color: #050505;
   color: #c3b085;
   text-align: center;
 }
