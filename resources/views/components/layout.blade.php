@@ -25,7 +25,7 @@
 
         </div>
         <div class="col-md-8 d-none d-md-block"></div>
-        <div class="col-md-2"><h1 class="mt-4">M̵̞̦̓͋̒͜M̴̠̪̘̐̒̿W̵͚̼̒̀͠ {{ Route::currentRouteName() }}</h1></div>
+        <div class="col-md-2"><h1 class="mt-4">M̵̞̦̓͋̒͜M̴̠̪̘̐̒̿W̵͚̼̒̀͠ </h1></div>
     </header>
     <main class="row">
         <div id="sidr">
@@ -61,17 +61,28 @@
                 <div class="col-sm-10">
                     {{$slot}}
                 </div>
-                <div class="col-sm-2">
-                    <div><p>Contact</p><div>
+                <div class="col-sm-2 no-padding">
+                    <div>
+                        <div class="wrapper">
+                        </div>
+                        <ul class="no-padding">
+                            <li class="ctlist"><a href="https://github.com/Maremic" target="_blank">👾 GitHub</a></li>
+                            <li class="ctlist"><a href="https://www.linkedin.com/in/michal-mare%C5%A1-049b96225/" target="_blank">👔 LinkedIn</a></li>
+                            <li class="ctlist">📜 misak.mares@gmail.com</li>
+                            <li class="ctlist">📞 +420 601 553 044</li>
+                        </ul>
+                    <div>
                 </div>
             </div>
         </div>
 
     </main>
 
-    <footer class="row">
-        <div class="col-12"><p>Mareš Michal 2022</p></div>
-    </footer>
+    <footer class="footer fixed-bottom">
+        <div class="container">
+          <span class="text-muted">Copyright © Mareš Michal, 2022</span>
+        </div>
+      </footer>
     <x-flash/>
 
         <!-- Include jQuery -->

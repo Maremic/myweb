@@ -11320,3 +11320,60 @@ ul li a:hover {
 p {
   padding: 1em;
 }
+
+.section {
+  margin-top: auto;
+  position: relative;
+  height: 10vh;
+  display: block;
+}
+.section span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.about {
+  background-image: url("/images/bgimage.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+.section-text {
+  text-align: left;
+  height: 30%;
+  padding-left: 20%;
+  display: block;
+}
+
+.wrapper {
+  min-height: 15em;
+}
+
+.header {
+  min-height: 8em;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.adminmenu {
+  z-index: 1;
+  position: relative;
+}
+
+.sctitle {
+  font-size: xx-large;
+  font-weight: bolder;
+  display: block;
+  padding-top: 2.5%;
+}
+
+.ctlist {
+  min-height: 8em;
+}
+
+.no-padding {
+  padding: 0;
+}

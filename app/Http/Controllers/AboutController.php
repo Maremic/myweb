@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\About;
 use App\Http\Requests\StoreAboutRequest;
 use App\Http\Requests\UpdateAboutRequest;
@@ -38,10 +39,11 @@ class AboutController extends Controller
      */
     public function store(StoreAboutRequest $request)
     {
-        About::create([
-            'sctitle' => $request->get('sctitle'),
-            'section' => $request->get('section'),
-          ]);
+        $validatedData = $request->validate([
+            'sctitle' => 'required|max:30',
+            'section' => 'required',
+        ]);
+        $show = about::create($validatedData);
 
           return redirect('/abouts')->with('success, About section created');
     }
@@ -63,9 +65,11 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit($id)
     {
-        //
+        $about = About::findOrFail($id);
+
+        return view('edit.about' ,['about' => $about]);
     }
 
     /**
@@ -75,9 +79,16 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAboutRequest $request, About $about)
+    public function update(Request $request, $id)
     {
-        //
+
+        $validatedData = $request->validate([
+            'sctitle' => 'required|max:30',
+            'section' => 'required'
+        ]);
+        About::whereId($id)->update($validatedData);
+
+        return redirect('/abouts')->with('success', 'Section Data are successfully updated');
     }
 
     /**
@@ -86,8 +97,11 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(About $about)
+    public function destroy($id)
     {
-        //
+        $about = About::findOrFail($id);
+        $about->delete();
+
+        return redirect('/abouts')->with('success', 'Section is successfully deleted');
     }
 }

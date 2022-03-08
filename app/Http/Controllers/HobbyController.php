@@ -89,6 +89,6 @@ class HobbyController extends Controller
      */
     public function destroy(Hobby $hobby)
     {
-        //
+
     }
 }

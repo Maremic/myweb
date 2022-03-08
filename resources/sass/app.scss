@@ -49,6 +49,58 @@ p{
 
 }
 
-// #menu{
-//     position: fixed;
-// }
+.section{
+    margin-top: auto;
+    position: relative;
+    height: 10vh;
+    display: block;
+    span{
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+.about{
+    background-image: url('/images/bgimage.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.section-text{
+    text-align: left;
+    height: 30%;
+    padding-left: 20%;
+    display: block;
+}
+
+.wrapper{
+    min-height: 15em;
+}
+
+.header{
+    min-height: 8em;
+}
+
+a{
+    text-decoration: none;
+    color: $colortheme3;
+}
+
+.adminmenu{
+    z-index: 1;
+    position: relative;
+}
+
+.sctitle{
+    font-size: xx-large;
+    font-weight: bolder;
+    display: block;
+    padding-top: 2.5%;
+}
+
+.ctlist{
+    min-height: 8em;
+}
+
+.no-padding{
+    padding: 0;
+}
