@@ -47,20 +47,3 @@ Route::get('login', [SessionController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 
 Route::get('logout', [SessionController::class, 'destroy'])->middleware('auth');
-
-
-
-
-    // then apply some CSS to make it prettier
-
-    // About model, Post model, --> then make it all clickable with "show", editable with "edit" and deletable with "delete" @method()
-
-    // but first try to make do the first steps in alls, create, index, store.
-
-    // make Bootstrap
-
-    // make edits, delete, show + validation and admin section! (hide create buttons for guests)
-
-    //add comments
-
-    //edit forms to leave old data, as Jeffrey did, validate data.
