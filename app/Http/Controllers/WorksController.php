@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Works;
 use App\Http\Requests\StoreWorksRequest;
 use App\Http\Requests\UpdateWorksRequest;
+use Illuminate\Validation\Rule;
 
 class WorksController extends Controller
 {
@@ -66,9 +67,11 @@ class WorksController extends Controller
      * @param  \App\Models\Works  $works
      * @return \Illuminate\Http\Response
      */
-    public function edit(Works $works)
+    public function edit($id)
     {
-        //
+        $work = Works::findOrFail($id);
+
+        return view('edit.work' ,['work' => $work]);
     }
 
     /**
@@ -78,9 +81,18 @@ class WorksController extends Controller
      * @param  \App\Models\Works  $works
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWorksRequest $request, Works $works)
+    public function update(UpdateWorksRequest $request, Works $work)
     {
-        //
+        $attributes = $this->validatePost($work);
+
+        if ($attributes['image'] ?? false) {
+            $attributes['image'] = request()->file('image')->store('worksimages');
+        }
+
+        $work->update($attributes);
+
+        return redirect('/works')->with('success', 'Work gallery item Updated!');
+
     }
 
     /**
@@ -89,8 +101,23 @@ class WorksController extends Controller
      * @param  \App\Models\Works  $works
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Works $works)
+    public function destroy($id)
     {
-        //
+        $work = Works::findOrFail($id);
+        $work->delete();
+
+        return redirect('/works')->with('success', 'Section is successfully deleted');
+    }
+
+    protected function validatePost(?Works $work = null): array
+    {
+        $work ??= new Works();
+
+        return request()->validate([
+            'title' => 'required',
+            'image' => $work->exists ? ['image'] : ['required', 'image'],
+            'slug' => ['required', Rule::unique('works', 'slug')->ignore($work)],
+            'excerpt' => 'required',
+        ]);
     }
 }

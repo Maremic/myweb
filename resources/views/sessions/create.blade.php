@@ -6,11 +6,15 @@
 
             <form method="POST" action="/login" class="">
                 @csrf
-
-                <x-form.input name="email" type="email" autocomplete="username" required />
-                <x-form.input name="password" type="password" autocomplete="current-password" required />
-
-                <x-form.button>Log In</x-form.button>
+                <div class="pt-3">
+                    <x-form.input name="email" type="email" autocomplete="username" required />
+                </div>
+                <div class="pt-3">
+                    <x-form.input name="password" type="password" autocomplete="current-password" required />
+                </div>
+                <div class="pt-3">
+                    <x-form.button>Log In</x-form.button>
+                </div>
             </form>
 
         </main>

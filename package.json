@@ -21,6 +21,8 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-balloon-block": "^33.0.0",
+        "@ckeditor/ckeditor5-build-classic": "^33.0.0",
         "sidr": "^2.2.1"
     }
 }

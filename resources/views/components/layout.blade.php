@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.sidr/2.2.1/stylesheets/jquery.sidr.dark.min.css">
     {{-- alpine for flash --}}
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    {{--CKeditor--}}
+    <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script>
 
     <title>M̵̞̦̓͋̒͜M̴̠̪̘̐̒̿W̵͚̼̒̀͠ {{ Route::currentRouteName() }}</title>
 </head>
@@ -43,7 +45,7 @@
                                 Welcome, {{ auth()->user()->name }}!
                             </a>
                             </li>
-                @else
+                {{-- @else
                     <li><a href="/register"
                        class="text-xs font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
                         Register
@@ -52,7 +54,7 @@
                     <li><a href="/login"
                        class="ml-6 text-xs font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
                         Log In
-                    </a></li>
+                    </a></li> --}}
                 @endauth
             </ul>
 
@@ -62,8 +64,8 @@
                 <div class="col-sm-10">
                     {{$slot}}
                 </div>
-                <div class="col-sm-2 no-padding">
-                    <div>
+                <div class="col-sm-2 no-padding" id="page-wrap">
+                    <div id="sidebar">
                         <div class="wrapper">
                         </div>
                         <ul class="no-padding">
@@ -92,7 +94,7 @@
             <script src="//cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
         {{-- alpine for flash --}}
             <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
+        {{--sidr funcionality--}}
             <script>
             $(document).ready(function() {
                 $('#simple-menu').sidr();

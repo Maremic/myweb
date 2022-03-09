@@ -4,14 +4,23 @@
 
             <h1 class="">Register!</h1>
 
-            <form method="POST" action="/register" class="">
+            <form method="POST" action="/register" class="justify-content-center">
                 @csrf
-
-                <x-form.input name="name" required />
-                <x-form.input name="username" required />
-                <x-form.input name="email" type="email" required />
-                <x-form.input name="password" type="password" autocomplete="new-password" required />
-                <x-form.button>Sign Up</x-form.button>
+                <div class="pt-3">
+                    <x-form.input name="name" required />
+                </div>
+                <div class="pt-3">
+                    <x-form.input name="username" required />
+                </div>
+                <div class="pt-3">
+                    <x-form.input name="email" type="email" required />
+                </div>
+                <div class="pt-3">
+                    <x-form.input name="password" type="password" autocomplete="new-password" required />
+                </div>
+                <div class="pt-3">
+                    <x-form.button>Sign Up</x-form.button>
+                </div>
             </form>
 
         </main>

@@ -3,7 +3,8 @@
     <x-form.label name="{{ $name }}" />
 
     <textarea
-        class=""
+        class="textarea"
+        placeholder="Put some text here."
         name="{{ $name }}"
         id="{{ $name }}"
         required
@@ -11,3 +12,5 @@
     >{{ $slot ?? old($name) }}</textarea>
 
     <x-form.error name="{{ $name }}" />
+
+

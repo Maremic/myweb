@@ -4,14 +4,19 @@
             <form method="POST" action="/imagesg" enctype="multipart/form-data">
                 @csrf
 
-                <h1> Create Image</h1>
+                <div class="row d-flex justify-content-center m-auto">
+                    <h1> Create image</h1>
+                </div>
 
-                <x-form.input name="title" required />
-
-                <x-form.input name="image" type="file"/>
-
-
-                <button type="submit">Submit</button>
+                <div class="row d-flex justify-content-center m-auto w-100 pt-5">
+                    <x-form.input name="title" required />
+                </div>
+                <div class="row d-flex justify-content-center m-auto w-100 pt-5">
+                    <x-form.input name="image" type="file"/>
+                </div>
+                <div class=" d-flex justify-content-center pt-5">
+                    <button type="submit" class="btn btn-warning">Submit</button>
+                </div>
             </form>
         </div>
     </div>

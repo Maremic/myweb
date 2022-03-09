@@ -11377,3 +11377,29 @@ a {
 .no-padding {
   padding: 0;
 }
+
+.ck-editor__editable_inline {
+  min-height: 20rem;
+}
+
+.ck-editor__editable {
+  width: 100%;
+}
+
+input {
+  background-color: black;
+  color: #c3b085;
+}
+
+.sectionimage {
+  height: 20rem;
+  width: auto;
+}
+
+#page-wrap {
+  position: relative;
+}
+
+#sidebar {
+  position: fixed;
+}
