@@ -1,7 +1,11 @@
 <x-layout>
 <div class="container">
     <div class="row d-flex flex-column h-25">
-        <h1>Welcome to my personal website !</h1>
+        @auth
+            <h1>Welcome back! Lets do something new!</h1>
+        @else
+            <h1>Welcome to my personal website !</h1>
+        @endauth
     </div>
         <div class="row d-flex flex-row h-50">
             <div class="col-md-6 col-lg-6 d-flex flex-column">
