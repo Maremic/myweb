@@ -5,7 +5,7 @@
         @endauth
         <div class="content">
             <div class="header">
-                <h1>Hobbies</h1>
+                <h1 class="display-2">Hobbies</h1>
             </div>
                     <div class="accordion" id="stayopen">
                         @foreach ($allHobbies as $hobby)
