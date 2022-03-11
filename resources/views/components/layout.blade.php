@@ -5,6 +5,13 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Styles -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link rel="icon" href="{{ URL::asset('favicon-32x32.png') }}" type="image/x-icon"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <meta charset="UTF-8">
@@ -16,7 +23,7 @@
     {{--CKeditor--}}
     <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script>
 
-    <title>M̵̞̦̓͋̒͜M̴̠̪̘̐̒̿W̵͚̼̒̀͠ {{ Route::currentRouteName() }}</title>
+    <title>𝖬𝖬𝖶 {{ Route::currentRouteName() }}</title>
 </head>
 <div class="container-lg main vh-100 vw-100">
 
@@ -27,8 +34,8 @@
             </a>
 
         </div>
-        <div class="col-md-8 d-none d-md-block"></div>
-        <div class="col-md-2"><h1 class="mt-4">M̵̞̦̓͋̒͜M̴̠̪̘̐̒̿W̵͚̼̒̀͠ </h1></div>
+        <div class="col-md-8 d-none d-md-block headerimage"></div>
+        <div class="col-md-2"><h1 class="mt-4"><img src="{{URL::asset('/images/logonobg.png')}}"/></div>
     </header>
     <main class="row">
         <div id="sidr">
@@ -37,7 +44,6 @@
                 <li><a href="/abouts">About Me</a></li>
                 <li><a href="/works">Works Gallery</a></li>
                 <li><a href="/hobbies">Hobbies</a></li>
-                <li><a href="/imagesg">Images</a></li>
                 @auth
                             <li><a
                                 href="/logout"
@@ -64,8 +70,8 @@
                 <div class="col-sm-10">
                     {{$slot}}
                 </div>
-                <div class="col-sm-2 no-padding" id="page-wrap">
-                    <div id="sidebar">
+                <div class="col-sm-2 no-padding position-sm-static position-md-static position-lg-relative position-xl-relative" id="page-wrap">
+                    <div id="sidebar" class="position-sm-static position-md-static position-lg-fixed position-xl-fixed">
                         <div class="wrapper">
                         </div>
                         <ul class="no-padding">

@@ -8,6 +8,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 [class*="col"]{
+    margin:0 auto;
     padding: 1rem;
     background-color: rgb(5, 5, 5);
     // border: 2px solid rgb(156, 156, 156);
@@ -60,9 +61,11 @@ p{
     }
 }
 .about{
-    background-image: url('/images/bgimage.png');
+    background-image: url('/images/bgimage7.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: center ;
+    background-attachment: fixed;
+    background-repeat: repeat-y;
 }
 
 .section-text{
@@ -98,7 +101,7 @@ a{
 }
 
 .ctlist{
-    min-height: 8em;
+    min-height: 3em;
 }
 
 .no-padding{
@@ -119,17 +122,97 @@ input{
 }
 
 .sectionimage{
-    height: 20rem;
-    width: auto;
+    height: auto;
+    width: 90%;
+    border-radius: 1rem;
+    margin: auto;
+    padding: auto;
 }
 
-#page-wrap {
+.headerimage{
+    background-image: url('/images/Mare Mic Website.png');
+    background-size: cover;
+    background-position: center center;
+}
 
-    position: relative;
+.height100{
+    height: 60vh;
+    margin: auto;
+}
+
+.quote{
+    margin-top: 5rem;
+}
+
+
+
+@media (min-width: 576px) {
+    .position-sm-static {
+      position: static !important;
+    }
+    .position-sm-relative {
+      position: relative !important;
+    }
+    .position-sm-absolute {
+      position: absolute !important;
+    }
+    .position-sm-fixed {
+      position: fixed !important;
+    }
+    .position-sm-sticky {
+      position: sticky !important;
+    }
+  }
+  @media (min-width: 768px) {
+    .position-md-static {
+      position: static !important;
+    }
+    .position-md-relative {
+      position: relative !important;
+    }
+    .position-md-absolute {
+      position: absolute !important;
+    }
+    .position-md-fixed {
+      position: fixed !important;
+    }
+    .position-md-sticky {
+      position: sticky !important;
+    }
   }
 
-#sidebar {
+  @media (min-width: 992px) {
+    .position-lg-static {
+      position: static !important;
+    }
+    .position-lg-relative {
+      position: relative !important;
+    }
+    .position-lg-absolute {
+      position: absolute !important;
+    }
+    .position-lg-fixed {
+      position: fixed !important;
+    }
+    .position-lg-sticky {
+      position: sticky !important;
+    }
+  }
 
-    position: fixed;
-
-}
+  @media (min-width: 1200px) {
+    .position-xl-static {
+      position: static !important;
+    }
+    .position-xl-relative {
+      position: relative !important;
+    }
+    .position-xl-absolute {
+      position: absolute !important;
+    }
+    .position-xl-fixed {
+      position: fixed !important;
+    }
+    .position-xl-sticky {
+      position: sticky !important;
+    }
+  }

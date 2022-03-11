@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Hobby;
 use App\Http\Requests\StoreHobbyRequest;
 use App\Http\Requests\UpdateHobbyRequest;
+use Illuminate\Validation\Rule;
 
 class HobbyController extends Controller
 {
@@ -38,13 +39,14 @@ class HobbyController extends Controller
      */
     public function store(StoreHobbyRequest $request)
     {
-        Hobby::create([
-            'sctitle' => $request->get('sctitle'),
-            'image' => request()->file('image')->store('hobbiesimages'),
-            'section' => $request->get('section'),
-          ]);
+            Hobby::create([
+              'sctitle' => $request->get('sctitle'),
+              'image' => request()->file('image')->store('hobbiesimages'),
+              'section' => $request->get('section'),
+            ]);
 
-          return redirect('/hobbies')->with('success', 'Hobby section created!');
+            return redirect('/hobbies')->with('success', 'Hobby section created!');
+
     }
 
     /**
@@ -53,7 +55,7 @@ class HobbyController extends Controller
      * @param  \App\Models\Hobby  $hobby
      * @return \Illuminate\Http\Response
      */
-    public function show(Hobby $hobby)
+    public function show(Hobby $hobbies)
     {
         //
     }
@@ -61,12 +63,14 @@ class HobbyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Hobby  $hobby
+     * @param  \App\Models\Hobby  $hobbies
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hobby $hobby)
+    public function edit($id)
     {
-        //
+        $hobby = Hobby::findOrFail($id);
+
+        return view('edit.hobby' ,['hobby' => $hobby]);
     }
 
     /**
@@ -78,7 +82,16 @@ class HobbyController extends Controller
      */
     public function update(UpdateHobbyRequest $request, Hobby $hobby)
     {
-        //
+        $attributes = $this->validatePost($hobby);
+
+        if ($attributes['image'] ?? false) {
+            $attributes['image'] = request()->file('image')->store('hobbiesimages');
+        }
+
+        $hobby->update($attributes);
+
+        return redirect('/hobbies')->with('success', 'Hobby section Updated!');
+
     }
 
     /**
@@ -87,8 +100,23 @@ class HobbyController extends Controller
      * @param  \App\Models\Hobby  $hobby
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hobby $hobby)
+    public function destroy($id)
     {
+        $hobby = Hobby::findOrFail($id);
+        $hobby->delete();
 
+        return redirect('/hobbies')->with('success', 'Section is successfully deleted');
+    }
+
+    protected function validatePost(?Hobby $hobby = null): array
+    {
+        $hobby ??= new Hobby();
+
+        return request()->validate([
+            'sctitle' => 'required',
+            'image' => $hobby->exists ? ['image'] : ['required', 'image'],
+            'section' => 'required',
+        ]);
     }
 }
+

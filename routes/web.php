@@ -34,8 +34,6 @@ Route::resource('/abouts', AboutController::class);
 
 Route::resource('/hobbies', HobbyController::class);
 
-Route::resource('/imagesg', ImageController::class);
-
 Route::resource('/works', WorksController::class);
 
 //Ways connecting to session and register
