@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <!-- Scripts -->
+
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Styles -->

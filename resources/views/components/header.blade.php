@@ -6,5 +6,5 @@
 
     </div>
     <div class="col-md-8 d-none d-md-block headerimage"></div>
-    <div class="col-md-2"><h1 class="mt-4"><img src="{{URL::asset('/images/logonobg.png')}}"/></div>
+    <div class="col-md-2"><h1 class="mt-4"><img src="{{URL::asset('/images/logonobg.png')}}" class="logonobg"/></div>
 </header>
