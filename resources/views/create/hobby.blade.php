@@ -15,23 +15,9 @@
                 <div class="row d-flex justify-content-center m-auto w-100 pt-5">
                     <x-form.input name="image" type="file"/>
                 </div>
-                <div class=" d-flex justify-content-center pt-5">
-                    <button type="submit" formnovalidate="formnovalidate" class="btn btn-warning">Submit</button>
-                </div>
+                <x-form.submit/>
             </form>
         </div>
     </div>
-    <script>
-        ClassicEditor
-            .create( document.querySelector( '#section' ), {
-                toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
-
-            } )
-            .catch( error => {
-                console.log( error );
-
-            } );
-
-
-    </script>
+    <x-form.script/>
 </x-layout>

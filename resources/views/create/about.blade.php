@@ -12,25 +12,11 @@
             <div class="row textarea d-flex justify-content-center m-auto">
                 <x-form.textarea name="section" required/>
             </div>
-            <div class=" d-flex justify-content-center pt-5">
-                <button type="submit" formnovalidate="formnovalidate" class="btn btn-warning">Submit</button>
-            </div>
+            <x-form.submit/>
                 <x-form.error name="sctitle"/>
                 <x-form.error name="section"/>
             </form>
         </div>
     </div>
-    <script>
-        ClassicEditor
-    .create( document.querySelector( '#section' ), {
-        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
-
-    } )
-    .catch( error => {
-        console.log( error );
-
-    } );
-
-
-    </script>
+    <x-form.script/>
 </x-layout>
