@@ -20,15 +20,24 @@ $btn-focus-box-shadow:$colortheme2;
 $accordion-border-color:$colortheme1;
 $accordion-button-bg:rgba(65, 63, 63, 0.116);
 
+
+
 //theme
 $theme: dark;
 
 @if($theme == light) {
     $body-bg: #fff;
-    $colortheme1: rgb(110, 92, 54);
-    $colortheme2: rgb(195, 176, 133);;
+    $colortheme1: rgb(211, 182, 119);
+    $colortheme2: rgb(255, 255, 255);;
     $colortheme3: rgb(0, 0, 0);
     $acolor:rgb(0, 0, 0);
+    $accordion-bg: $colortheme1;
+    $accordion-color:  $colortheme2;
+    $accordion-button-active-bg: rgba(65, 63, 63, 0.116);
+    $accordion-button-active-color:$colortheme2;
+    $btn-focus-box-shadow:$colortheme2;
+    $accordion-border-color:$colortheme1;
+    $accordion-button-bg:rgba(65, 63, 63, 0.116);
 }
 @if($theme == dark) {
     $body-bg: rgb(34, 34, 34);
@@ -36,6 +45,13 @@ $theme: dark;
     $colortheme2: rgb(195, 176, 133);
     $colortheme3: #fff;
     $acolor:rgb(255, 255, 255);
+    $accordion-bg: $colortheme1;
+    $accordion-color:  $colortheme2;
+    $accordion-button-active-bg: rgba(65, 63, 63, 0.116);
+    $accordion-button-active-color:$colortheme2;
+    $btn-focus-box-shadow:$colortheme2;
+    $accordion-border-color:$colortheme1;
+    $accordion-button-bg:rgba(65, 63, 63, 0.116);
 }
 
 @if($theme != light) and ($theme != dark){

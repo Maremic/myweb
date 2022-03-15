@@ -4,6 +4,11 @@
 // Variables
 @import 'variables';
 
+$light: #dddddd;
+$dark: #000;
+
+@import "bootstrap";
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
@@ -92,6 +97,7 @@ p{
 
 .header{
     min-height: 8em;
+    border-radius: 2rem;
 }
 
 a{
@@ -128,7 +134,7 @@ a{
 }
 
 input{
-    background-color: black;
+    background-color: $colortheme1;
     color: $colortheme2;
 }
 
@@ -138,12 +144,14 @@ input{
     border-radius: 1rem;
     margin: auto;
     padding: auto;
+
 }
 
 .headerimage{
     background-image: url('/images/Mare Mic Website.png');
     background-size: cover;
     background-position: center center;
+
 }
 
 .height100{

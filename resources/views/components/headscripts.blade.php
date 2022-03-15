@@ -40,4 +40,19 @@
     $(document).ready(function() {
         $('#simple-menu').sidr();
     });
+
+    // when used elements like, bg-light, text-dark, etc, it can switch bs-colors, this version is not in memory or cookies,
+    // kinda like dark mode on sites with videos u can "darken" screen for that moment
+    //but I will had to change all site to bootstrap colors to get used of this :( maybe later or if i can reach better solution.
+
+    $('.switch').on( "click" ,function (){
+        $([".light [class*='-light']", ".dark [class*='-dark']"]).each((i,ele)=>{
+            $(ele).toggleClass('bg-light bg-dark')
+            $(ele).toggleClass('text-light text-dark')
+            $(ele).toggleClass('navbar-light navbar-dark')
+            $(ele).toggleClass('btn-light btn-dark')
+            })
+            // toggle body class selector
+            $('body').toggleClass('light dark')
+            })
     </script>

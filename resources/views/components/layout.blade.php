@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<body class="light">
 <x-headscripts>
 <div class="container-lg main vh-100 vw-100">
     <x-header/>
@@ -18,4 +20,5 @@
     <x-flash/>
     </x-headscripts>
 </div>
+</body>
 </html>
