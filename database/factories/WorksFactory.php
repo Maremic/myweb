@@ -16,8 +16,16 @@ class WorksFactory extends Factory
      */
     public function definition()
     {
+        $fakerFileName = $this->faker->image(
+            "public/storage/worksimages",
+            800,
+            600
+        );
+
         return [
-            //
+            'title' => $this->faker->sentence(),
+            'excerpt' => $this->faker->paragraph(20),
+            'image' => "worksimages/" . basename($fakerFileName),
         ];
     }
 }

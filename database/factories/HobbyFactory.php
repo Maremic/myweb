@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Hobby;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class HobbyFactory extends Factory
 {
+    protected $model = Hobby::class;
     /**
      * Define the model's default state.
      *
@@ -16,8 +18,17 @@ class HobbyFactory extends Factory
      */
     public function definition()
     {
+        $fakerFileName = $this->faker->image(
+            "public/storage/hobbiesimages",
+            800,
+            600
+        );
+
         return [
-            //
+            'sctitle' => $this->faker->sentence(),
+            'section' => $this->faker->paragraph(20),
+
+            'image' => "hobbiesimages/" . basename($fakerFileName),
         ];
     }
 }

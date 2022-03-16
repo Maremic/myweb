@@ -16,7 +16,7 @@ class WorksController extends Controller
      */
     public function index()
     {
-        $works = Works::all();
+        $works = Works::latest()->paginate(5);
 
         return view('view.work', ['allWorks' => $works]);
     }

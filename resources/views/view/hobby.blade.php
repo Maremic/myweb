@@ -37,6 +37,9 @@
                                 </div>
                         @endforeach
                     </div>
+                    <div class="d-flex justify-content-center">
+                        {!! $allHobbies->links() !!}
+                    </div>
         </div>
     </div>
 </x-layout>

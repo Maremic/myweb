@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,7 +19,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if (!$this->app->environment('production')) {
+            $this->app->register('App\Providers\FakerServiceProvider');
+        }
     }
 
     /**
@@ -37,5 +40,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('admin', function () {
             return request()->user()?->can('admin');
         });
+
+        Paginator::useBootstrap();
     }
 }

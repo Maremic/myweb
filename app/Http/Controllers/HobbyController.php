@@ -16,7 +16,7 @@ class HobbyController extends Controller
      */
     public function index()
     {
-        $hobbies = Hobby::all();
+        $hobbies = Hobby::latest()->paginate(5);
 
         return view('view.hobby', ['allHobbies' => $hobbies]);
     }

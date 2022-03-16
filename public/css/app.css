@@ -22545,10 +22545,6 @@ textarea.form-control-lg {
   text-align: center;
 }
 
-nav {
-  border: 2px solid #c3b085;
-}
-
 ul {
   list-style: none;
 }
@@ -22679,6 +22675,30 @@ input {
 .logonobg {
   max-height: 5rem;
   width: auto;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  color: #c3b085;
+  text-decoration: none;
+  background-color: black;
+  border: 1px solid #c3b085;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: black;
+  background-color: #c3b085;
+  border-color: #c3b085;
+}
+
+.page-item.disabled .page-link {
+  color: #ff3a3a;
+  pointer-events: none;
+  background-color: black;
+  border-color: #000000;
 }
 
 @media (min-width: 576px) {

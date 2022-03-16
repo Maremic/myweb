@@ -4,6 +4,7 @@
 // Variables
 @import 'variables';
 
+//this before importing bootstrap will override dark and light for mode switch editing.
 $light: #dddddd;
 $dark: #000;
 
@@ -22,11 +23,6 @@ $dark: #000;
     color: $colortheme2;
     text-align: center;
 
-}
-
-
-nav{
-    border:2px solid $colortheme2;
 }
 
 ul{
@@ -168,6 +164,31 @@ input{
     width: auto;
 }
 
+//pagination
+.page-link {
+    position: relative;
+    display: block;
+    color: $colortheme2;
+    text-decoration: none;
+    background-color: $colortheme1;
+    border: 1px solid $colortheme2;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: $colortheme1;
+    background-color: $colortheme2;
+    border-color: $colortheme2;
+}
+
+.page-item.disabled .page-link {
+    color: #ff3a3a;
+    pointer-events: none;
+    background-color: rgb(0, 0, 0);
+    border-color: #000000;
+}
+
 
 @media (min-width: 576px) {
     .position-sm-static {
@@ -239,4 +260,6 @@ input{
       position: sticky !important;
     }
 }
+
+
 

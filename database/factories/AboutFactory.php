@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class AboutFactory extends Factory
 {
+
     /**
      * Define the model's default state.
      *
@@ -16,8 +17,10 @@ class AboutFactory extends Factory
      */
     public function definition()
     {
+
         return [
-            //
+            'sctitle' => $this->faker->sentence(),
+            'section' => $this->faker->paragraph(20),
         ];
     }
 }
