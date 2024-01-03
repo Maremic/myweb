@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('works', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('image')->nullable();
-            $table->text('excerpt');
-            $table->timestamps();
+        Schema::table('sections', function (Blueprint $table) {
+            $table->string('type');
         });
     }
 
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('works');
+        Schema::table('sections', function (Blueprint $table) {
+            $table->dropColumn('type');
+        });
     }
 };

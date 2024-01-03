@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Sluggable;
 
-class Post extends Model
+class Section extends Model
 {
     use HasFactory;
     use Sluggable;
@@ -18,10 +19,16 @@ class Post extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function section()
+    public function posts()
     {
-        return $this->belongsTo(Section::class, 'section_id');
+        return $this->hasMany(Post::class);
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
 
 }
 

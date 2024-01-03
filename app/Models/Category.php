@@ -4,15 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Sluggable;
 
 class Category extends Model
 {
     use HasFactory;
+    use Sluggable;
 
     protected $guarded=[];
 
-    public function posts()
+    public function sections()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Section::class);
     }
 }

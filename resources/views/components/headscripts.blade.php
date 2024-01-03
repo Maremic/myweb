@@ -19,12 +19,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Include a Sidr bundled CSS theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.sidr/2.2.1/stylesheets/jquery.sidr.dark.min.css">
-    {{-- alpine for flash --}}
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     {{--CKeditor--}}
     <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script>
 
-    <title>𝖬𝖬𝖶 {{ Route::currentRouteName() }}</title>
+    <title>Helsink</title>
 </head>
 
 {{$slot}}
@@ -37,9 +35,24 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 {{--sidr funcionality--}}
     <script>
-    $(document).ready(function() {
-        $('#simple-menu').sidr();
+    $(document).ready(function () {
+    // Show the modal when clicking the simple-menu button
+    $('#simple-menu').click(function () {
+        $('#sidr').fadeIn();
     });
+
+    // Close the modal when clicking the close button or outside the modal
+    window.onclick = function (event) {
+        if (event.target == document.getElementById('sidr')) {
+            closeModal();
+        }
+    };
+    });
+
+    // Function to close the modal
+    function closeModal() {
+        $('#sidr').fadeOut();
+    }
 
     // when used elements like, bg-light, text-dark, etc, it can switch bs-colors, this version is not in memory or cookies,
     // kinda like dark mode on sites with videos u can "darken" screen for that moment

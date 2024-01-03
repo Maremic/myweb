@@ -1,12 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\HobbyController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SectionController;
 use App\Http\Controllers\ImageController;
-use App\Http\Controllers\WorksController;
-use App\Http\Controllers\AdminPostController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ImagesController;
@@ -27,15 +23,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
         return view('welcome');
 });
-
-Route::resource('/products', ProductController::class);
-
-Route::resource('/abouts', AboutController::class);
-
-Route::resource('/hobbies', HobbyController::class);
-
-Route::resource('/works', WorksController::class);
-
+Route::resource('/sections', SectionController::class);
+Route::resource('/category', CategoryController::class);
+Route::get('/category/{id}', [CategoryController::class, 'show']);
+Route::get('/category/{id}/section/create', [SectionController::class, 'create']);
 //Ways connecting to session and register
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');

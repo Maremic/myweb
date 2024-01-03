@@ -1,6 +1,6 @@
 <script>
     ClassicEditor
-        .create( document.querySelector( '#section' ), {
+        .create( document.querySelector( '#text' ), {
             toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
 
         } )

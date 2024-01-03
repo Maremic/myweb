@@ -22565,7 +22565,6 @@ ul li a:hover {
   padding: 0 15px;
   display: block;
   text-decoration: none;
-  color: #c3b085;
 }
 
 .main main {
@@ -22661,6 +22660,49 @@ input {
   background-image: url("/images/Mare Mic Website.png");
   background-size: cover;
   background-position: center center;
+}
+
+/* Styles for the modal container */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* semi-transparent background */
+}
+
+/* Styles for the modal content */
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url("/images/pergamen.png") no-repeat center center fixed;
+  /* Replace 'path/to/parchment.png' with the actual path to your image */
+  background-size: contain;
+  /* Use contain to ensure the entire image is visible */
+  background-position: center;
+  /* Center the background image */
+  padding: 40px;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 500px;
+  color: #fff;
+  /* Set text color to contrast with the background */
+}
+
+/* Styles for the close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #fff;
+  /* Set close button color to contrast with the background */
+  cursor: pointer;
 }
 
 .height100 {
@@ -22787,5 +22829,34 @@ input {
   .position-xl-sticky {
     position: -webkit-sticky !important;
     position: sticky !important;
+  }
+}
+/* For Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #5e4934;
+  /* Brown background color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b735b;
+  /* Darker brown for the thumb */
+  border-radius: 6px;
+  /* Optional: Add border-radius for a rounded look */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #644c36;
+  /* Darker brown for the hover effect */
+}
+
+/* Hide scrollbar on mobile devices */
+@media only screen and (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
 }
