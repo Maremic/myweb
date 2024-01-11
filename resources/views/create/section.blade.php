@@ -9,7 +9,7 @@
             <div class="row d-flex justify-content-center m-auto w-100 pt-5">
                 <x-form.input name="title" required />
             </div>
-            <div class="row textarea d-flex justify-content-center m-auto">
+            <div class="row textarea d-flex justify-content-center m-auto" style="color: black;">
                 <x-form.textarea name="text" required/>
             </div>
                 <input type="hidden" value="{{$categoryId}}" name="category_id">
